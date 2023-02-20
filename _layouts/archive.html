@@ -1,0 +1,26 @@
+---
+layout: default
+---
+
+<div class="archive">
+  <h1>
+    Archive of posts
+    {% if page.type == 'tag' or page.type == 'category' %}
+      with {{ page.type }} '{{ page.title }}'
+    {% elsif page.type == 'year' %}
+      from {{ page.date | date: "%Y" }}
+    {% elsif page.type == 'month' %}
+      from {{ page.date | date: "%b %Y" }}
+    {% else %}
+      from {{ page.date | date: "%d %b %Y" }}
+    {% endif %}
+  </h1>
+  <ul class="archive-posts">
+    {% for post in page.posts %}
+      <li>
+        <span>{{ post.date | date: "%d %b %Y" }}</span>
+        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+</div>

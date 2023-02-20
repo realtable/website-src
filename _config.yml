@@ -1,0 +1,46 @@
+title: Josh Quail
+shorturl: joshquail.com
+url: https://www.joshquail.com
+baseurl: /
+
+markdown: kramdown
+highlighter: rouge
+permalink: pretty
+
+plugins:
+  - jekyll-gist
+  - jekyll-paginate
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-archives
+
+author:
+  name: 'Josh Quail'
+  email: josh@madbean.com #?
+
+jekyll-archives:
+  enabled:
+    - year
+    - month
+    - day
+    - tag
+  layout: archive
+  permalinks:
+    year: '/:year/'
+    month: '/:year/:month/'
+    day: '/:year/:month/:day/'
+    tag: '/tag/:name/'
+
+paginate: 5
+
+exclude:
+  - .editorconfig
+  - .git
+  - .jekyll-cache
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE.md
+  - README.md
+  - build
+
+# todo: dark mode, tags (in /archive too), first blog post, fix sidebar responsiveness

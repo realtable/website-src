@@ -1,0 +1,9 @@
+<div class="archive-list">
+  {% for post in site.posts %}
+    {% assign currentdate = post.date | date: "%Y" %}
+    {% if currentdate != date %}
+      <li><a href="/{{currentdate}}">{{ currentdate }}</a></li>
+      {% assign date = currentdate %}
+    {% endif %}
+  {% endfor %}
+</div>
