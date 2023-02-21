@@ -127,12 +127,6 @@ a.sidebar-nav-item:focus {
   font-weight: bold;
 }
 
-@media (min-width: 48em) {
-  .sidebar-br {
-    display: none;
-  }
-}
-
 @media (max-width: 48em) {
   .sidebar-cc {
     display: none;
