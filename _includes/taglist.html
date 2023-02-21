@@ -1,0 +1,12 @@
+<div class="archive-list">
+  {% assign prevtag = '' %}
+  {% for post in site.posts %}
+    {% assign currenttaglist = post.tags %}
+    {% for currenttag in currenttaglist %}
+      {% if currenttag != prevtag %}
+        <li><a href="{{ site.baseurl }}tag/{{ currenttag }}">{{ currenttag }}</a></li>
+        {% assign prevtag = currenttag %}
+      {% endif %}
+    {% endfor %}
+  {% endfor %}
+</div>

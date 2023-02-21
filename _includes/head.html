@@ -8,9 +8,20 @@
 
   <title>
     {% if page.title == "Home" %}
-      {{ site.shorturl }}
+      {{ site.title }}
     {% else %}
-      {{ page.title }} &middot; {{ site.shorturl }}
+      {% if page.type == 'tag' or page.type == 'category' %}
+        #{{ page.title }} Archive
+      {% elsif page.type == 'year' %}
+        {{ page.date | date: "%Y" }} Archive
+      {% elsif page.type == 'month' %}
+        {{ page.date | date: "%b %Y" }} Archive
+      {% elsif page.type == 'day' %}
+        {{ page.date | date: "%d %b %Y" }} Archive
+      {% else %}
+        {{ page.title }}
+      {% endif %}
+      &middot; {{ site.shorturl }}
     {% endif %}
   </title>
 
@@ -18,6 +29,9 @@
   <link rel="stylesheet" href="{{ site.baseurl }}public/css/poole.css">
   <link rel="stylesheet" href="{{ site.baseurl }}public/css/syntax.css">
   <link rel="stylesheet" href="{{ site.baseurl }}public/css/hyde.css">
+
+  <!-- JS -->
+  <script src="{{ site.baseurl }}public/js/main.js"></script>
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">

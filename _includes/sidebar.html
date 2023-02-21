@@ -6,7 +6,7 @@
           {{ site.title }}
         </a>
       </h1>
-      <p class="lead">{{ site.description }}</p>
+      <p id="description" class="lead" onclick="setDescription()">CS and politics student from Sydney, Australia.</p>
     </div>
 
     <nav class="sidebar-nav">
@@ -26,10 +26,13 @@
         {% endif %}
       {% endfor %}
 
+      <br class="sidebar-br" />
       <a class="sidebar-nav-item" href="https://github.com/realtable" target="_blank">GitHub<i class="fa-solid fa-arrow-up-right-from-square"></i></a>
       <a class="sidebar-nav-item" href="https://www.linkedin.com/in/josh-quail/" target="_blank">LinkedIn<i class="fa-solid fa-arrow-up-right-from-square"></i></a>
     </nav>
 
-    <p><small><a href="https://creativecommons.org/licenses/by-nc-sa/2.0/">CC BY-NC-SA</a> {{ site.time | date: '%Y' }}</small></p>
+    <p class="sidebar-cc">
+      <small><a href="https://creativecommons.org/licenses/by-nc-sa/2.0/">CC BY-NC-SA</a> {{ site.time | date: '%Y' }}</small>
+    </p>
   </div>
 </div>

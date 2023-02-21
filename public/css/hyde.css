@@ -19,35 +19,13 @@
   padding-left: 4px;
 }
 
-.archive h1 {
-  margin-top: 0;
-}
-
-.archive-posts {
-  padding-left: 0;
-}
-
-.archive-posts li {
-  list-style-type: none;
-}
-
-.archive-list li {
-  list-style-type: none;
-}
-
-.theme-base-00 .sidebar {
-  background-color: rgb(153, 63, 97);
-}
-.theme-base-00 .content a,
-.theme-base-00 .related-posts li a:hover {
-  color: rgb(153, 63, 97);
-}
 
 /*
  * Contents
  *
  * Global resets
  * Sidebar
+ * Archive
  * Container
  * Reverse layout
  * Themes
@@ -101,6 +79,11 @@ html {
     text-align: left;
   }
 }
+@media (max-width: 48em) {
+  .sidebar {
+    padding-bottom: 0.5rem;
+  }
+}
 
 /* Sidebar links */
 .sidebar a {
@@ -114,6 +97,7 @@ html {
   font-family: "Cousine", monospace;
   font-size: 2.5rem;
   font-style: italic;
+  line-height: 1;
 }
 
 .sidebar-about h1 a:hover {
@@ -128,12 +112,31 @@ html {
   display: block;
   line-height: 1.75;
 }
+@media (max-width: 48em) {
+  .sidebar-nav-item {
+    display: inline-block;
+    padding-left: 0.25em;
+    padding-right: 0.25em;
+  }
+}
 a.sidebar-nav-item:hover,
 a.sidebar-nav-item:focus {
   text-decoration: underline;
 }
 .sidebar-nav-item.active {
   font-weight: bold;
+}
+
+@media (min-width: 48em) {
+  .sidebar-br {
+    display: none;
+  }
+}
+
+@media (max-width: 48em) {
+  .sidebar-cc {
+    display: none;
+  }
 }
 
 /* Sticky sidebar
@@ -151,8 +154,29 @@ a.sidebar-nav-item:focus {
   }
 }
 
+/*
+ * Archive
+ */
 
-/* Container
+.archive h1 {
+  margin-top: 0;
+}
+
+.archive-posts {
+  padding-left: 0;
+}
+
+.archive-posts li {
+  list-style-type: none;
+}
+
+.archive-list li {
+  list-style-type: none;
+}
+
+
+/*
+ * Container
  *
  * Align the contents of the site above the proper threshold with some margin-fu
  * with a 25%-wide `.sidebar`.
@@ -168,6 +192,12 @@ a.sidebar-nav-item:focus {
     max-width: 38rem;
     margin-left: 20rem;
     margin-right: 2rem;
+  }
+}
+
+@media (max-width: 48em) {
+  .content {
+    padding-top: 2rem;
   }
 }
 
@@ -189,6 +219,7 @@ a.sidebar-nav-item:focus {
   .layout-reverse .sidebar {
     left: auto;
     right: 0;
+    /* text-align: right; */
   }
   .layout-reverse .content {
     margin-left: 2rem;
@@ -211,6 +242,14 @@ a.sidebar-nav-item:focus {
  * As of v1.1, Hyde includes optional themes to color the sidebar and links
  * within blog posts. To use, add the class of your choosing to the `body`.
  */
+
+.theme-base-00 .sidebar {
+  background-color: rgb(153, 63, 97);
+}
+.theme-base-00 .content a,
+.theme-base-00 .related-posts li a:hover {
+  color: rgb(153, 63, 97);
+}
 
 /* Base16 (http://chriskempson.github.io/base16/#default) */
 

@@ -23,7 +23,7 @@ jekyll-archives:
     - year
     - month
     - day
-    - tag
+    - tags
   layout: archive
   permalinks:
     year: '/:year/'
@@ -43,4 +43,4 @@ exclude:
   - README.md
   - build
 
-# todo: dark mode, tags (in /archive too), first blog post, fix sidebar responsiveness
+# todo: dark mode
